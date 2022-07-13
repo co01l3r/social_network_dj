@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% extends 'main.html' %}
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>This action is irreversible, do you want to proceed to delete "{{object}}"?</p>
+    <a href="{% url 'projects'%}">No</a>
+    <input type="submit" value="Confirm">
+</form>
+{% endblock %}
+</body>
+</html>

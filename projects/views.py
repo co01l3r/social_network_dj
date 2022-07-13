@@ -34,9 +34,9 @@ def create_project(request):
 
 def update_project(request, pk):
     """
-    take the project model which has to match with model form and prefil all fields with project
+    take the project model which has to match with model form and prefill all fields with project
     data by pk, check if new data are valid and continue to save them into db under the same pk,
-    using the same template as create project
+    using the same template as create_project and redirect the user back to main view
     """
     project = Project.objects.get(id=pk)
     form = ProjectForm(instance=project)
@@ -49,3 +49,18 @@ def update_project(request, pk):
 
     context = {'form': form}
     return render(request, "projects/project_form.html", context)
+
+
+def delete_project(request, pk):
+    """
+    take the project model which has to match with model form and proceed to render delete
+    template from db and redirect user back to main view
+    """
+    project = Project.objects.get(id=pk)
+    context = {'object': project}
+
+    if request.method == 'POST':
+        project.delete()
+        return redirect('projects')
+
+    return render(request, 'projects/delete_template.html', context)
