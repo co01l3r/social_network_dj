@@ -9,7 +9,7 @@
 <form action="" method="POST">
     {% csrf_token %}
     <p>This action is irreversible, do you want to proceed to delete "{{object}}"?</p>
-    <a href="{% url 'projects'%}">No</a>
+    <a href="{% url 'projects' %}">No</a>
     <input type="submit" value="Confirm">
 </form>
 {% endblock %}
