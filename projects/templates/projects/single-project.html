@@ -9,7 +9,7 @@
 {% block content %}
 <h1>{{project.title}}</h1>
 <p>{{project.description}}</p>
-{% for tag in tags %}
+{% for tag in project.tags.all %}
     <span>{{tag}}</span>
 {% endfor %}
 
