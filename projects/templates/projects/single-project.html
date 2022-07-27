@@ -5,8 +5,14 @@
 </head>
 <body>
 {% extends  'main.html' %}
-{% block content %}
 
-{% endblock %}
+{% block content %}
+<h1>{{project.title}}</h1>
+<p>{{project.description}}</p>
+{% for tag in tags %}
+    <span>{{tag}}</span>
+{% endfor %}
+
+{% endblock content %}
 </body>
 </html>
