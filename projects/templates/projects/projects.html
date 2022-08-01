@@ -41,7 +41,7 @@
                   <p><a class="project__author" href="{% url 'project' project.id %}">author</a></p>
                   <p class="project--rating">
                     <span style="font-weight: bold;">{{project.vote_ratio}}%</span> Postitive
-                    Feedback ({{project.vote_total}} Votes)
+                    Feedback ({{project.vote_total}} votes)
                   </p>
                   <div class="project__tags">
                       {% for tag in project.tags.all %}
