@@ -49,7 +49,7 @@
                 </p>
 
                 <div class="dev__skills">
-                  {% for skill in profile.skill_set.all %}
+                  {% for skill in profile.skill_set.all|slice:"3" %}
                   <span class="tag tag--pill tag--main">
                     <small>{{skill}}</small>
                   </span>
@@ -60,10 +60,6 @@
             </div>
           </div>
           {% endfor %}
-
-
-
-
 
         </div>
       </div>
