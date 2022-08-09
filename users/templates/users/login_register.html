@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% extends 'main.html' %}
+{% block content %}
+
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="username" />
+    <input type="password" name="password" placeholder="Enter password" />
+    <input type="submit" value="Login"/>
+</form>
+
+{% endblock content %}
+</body>
+</html>
