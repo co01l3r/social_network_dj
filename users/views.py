@@ -10,7 +10,7 @@ def loginUser(request):
         password = request.POST['password']
 
         try:
-            user = User.objects.get(username=username)
+            User.objects.get(username=username)
         except:
             print('User not exist')
 
@@ -18,6 +18,8 @@ def loginUser(request):
         if user is not None:
             login(request, user)
             return redirect('projects')
+        else:
+            print('Wrong credentials')
 
     return render(request, 'users/login_register.html')
 
