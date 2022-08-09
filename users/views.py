@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
+from django.contrib import messages
 from django.contrib.auth.models import User
 from .models import Profile
 
@@ -15,20 +16,21 @@ def loginUser(request):
         try:
             User.objects.get(username=username)
         except:
-            print('User not exist')
+            messages.error(request, 'User not exist')
 
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
             return redirect('projects')
         else:
-            print('Wrong credentials')
+            messages.error(request, 'Wrong credentials')
 
     return render(request, 'users/login_register.html')
 
 
 def logoutUser(request):
     logout(request)
+    messages.error(request, 'Logged out')
     return redirect('login')
 
 
