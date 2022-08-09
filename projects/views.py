@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .models import Project
 from .forms import ProjectForm
 
@@ -15,6 +16,7 @@ def project(request, pk):
     return render(request, 'projects/single-project.html', context)
 
 
+@login_required(login_url="login")
 def create_project(request):
     """
     check if data are POST, take POST values from create form, validate them and if they are ok:
@@ -32,6 +34,7 @@ def create_project(request):
     return render(request, "projects/project_form.html", context)
 
 
+@login_required(login_url="login")
 def update_project(request, pk):
     """
     take the project model which has to match with model form and prefill all fields with project
@@ -51,6 +54,7 @@ def update_project(request, pk):
     return render(request, "projects/project_form.html", context)
 
 
+@login_required(login_url="login")
 def delete_project(request, pk):
     """
     take the project model which has to match with model form and proceed to render delete

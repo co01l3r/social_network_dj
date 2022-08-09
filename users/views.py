@@ -5,6 +5,9 @@ from .models import Profile
 
 
 def loginUser(request):
+    if request.user.is_authenticated:
+        return redirect('projects')
+
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
