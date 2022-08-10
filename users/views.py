@@ -6,6 +6,8 @@ from .models import Profile
 
 
 def loginUser(request):
+    page = 'login'
+
     if request.user.is_authenticated:
         return redirect('projects')
 
@@ -32,6 +34,12 @@ def logoutUser(request):
     logout(request)
     messages.error(request, 'Logged out')
     return redirect('login')
+
+
+def registerUser(request):
+    page = 'register'
+    context = {'page': page}
+    return render(request, 'users/login_register.html', context)
 
 
 def profiles(request):
