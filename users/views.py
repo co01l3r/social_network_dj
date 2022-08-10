@@ -40,6 +40,16 @@ def logoutUser(request):
 def registerUser(request):
     page = 'register'
     form = UserCreationForm()
+
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Account Created')
+            return redirect('projects')
+        else:
+            messages.error(request, 'ERROR')
+
     context = {'page': page, 'form': form}
     return render(request, 'users/login_register.html', context)
 
