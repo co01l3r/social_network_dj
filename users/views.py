@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Profile
+from .forms import CustomRegistration
 
 
 def loginUser(request):
@@ -39,10 +39,10 @@ def logoutUser(request):
 
 def registerUser(request):
     page = 'register'
-    form = UserCreationForm()
+    form = CustomRegistration()
 
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomRegistration(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, 'Account Created')
