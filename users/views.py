@@ -64,3 +64,8 @@ def userProfile(request, pk):
     profile = Profile.objects.get(id=pk)
     context = {'profile': profile}
     return render(request, 'users/user_profile.html', context)
+
+
+def userAccount(request):
+    context = {}
+    return render(request, 'users/account.html', context)
