@@ -18,6 +18,21 @@ def createProfile(sender, instance, created, **kwargs):
         )
 
 
+@receiver(post_save, sender=Profile)
+def updateUser(sender, instance, created, **kwargs):
+    """
+    when profile is edited, edit the User data as well
+    """
+    if not created:
+        profile = instance
+        user = profile.user
+
+        user.first_name = profile.name
+        user.username = profile.username
+        user.email = profile.email
+        user.save()
+
+
 @receiver(post_delete, sender=Profile)
 def deleteUser(sender, instance, **kwargs):
     """
