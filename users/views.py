@@ -108,3 +108,16 @@ def createSkill(request):
 
     context = {'form': form}
     return render(request, 'users/skill_form.html', context)
+
+
+@login_required(login_url='login')
+def deleteSkill(request, pk):
+    profile = request.user.profile
+    skill = profile.skill_set.get(id=pk)
+
+    if request.method == 'POST':
+        skill.delete()
+        return redirect('account')
+
+    context = {'object': skill}
+    return render(request, 'delete_template.html', context)

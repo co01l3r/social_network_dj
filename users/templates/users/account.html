@@ -45,6 +45,9 @@
                 <span class="tag tag--pill tag--sub tag--lg">
                   <small>{{skill}}</small>
                 </span>
+                <span>
+                  <a class="tag tag--pill tag--main settings__btn" href="{% url 'delete-skill' skill.id %}"><i class="im im-x-mark-circle-o"></i></a>
+                </span>
                 {% endfor %}
           </table>
 
