@@ -20,14 +20,18 @@ def project(request, pk):
 def create_project(request):
     """
     check if data are POST, take POST values from create form, validate them and if they are ok:
-    save them into db and redirect user back to main view
+    create a project instance and set owner value to currently logged user and save it into db
+    following with redirect user back to main view
     """
+    profile = request.user.profile
     form = ProjectForm()
 
     if request.method == 'POST':
         form = ProjectForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            project = form.save(commit=False)
+            project.owner = profile
+            project.save()
             return redirect('projects')
 
     context = {'form': form}
@@ -41,7 +45,8 @@ def update_project(request, pk):
     data by pk, check if new data are valid and continue to save them into db under the same pk,
     using the same template as create_project and redirect the user back to main view
     """
-    project = Project.objects.get(id=pk)
+    profile = request.user.profile
+    project = profile.project_set.get(id=pk)
     form = ProjectForm(instance=project)
 
     if request.method == 'POST':
@@ -60,7 +65,8 @@ def delete_project(request, pk):
     take the project model which has to match with model form and proceed to render delete
     template from db and redirect user back to main view
     """
-    project = Project.objects.get(id=pk)
+    profile = request.user.profile
+    project = profile.project_set.get(id=pk)
     context = {'object': project}
 
     if request.method == 'POST':
