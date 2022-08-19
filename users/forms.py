@@ -22,4 +22,4 @@ class ProfileForm(ModelForm):
 class SkillForm(ModelForm):
     class Meta:
         model = Skill
-        fields = ['name', 'description']
+        fields = ['name']
