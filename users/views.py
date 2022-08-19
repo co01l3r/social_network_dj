@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .models import Profile
-from .forms import CustomRegistration, ProfileForm
+from .forms import CustomRegistration, ProfileForm, SkillForm
 
 
 def loginUser(request):
@@ -95,5 +95,16 @@ def editAccount(request):
 
 @login_required(login_url='login')
 def createSkill(request):
-    context = {}
+    profile = request.user.profile
+    form = SkillForm()
+
+    if request.method == 'POST':
+        form = SkillForm(request.POST)
+        if form.is_valid():
+            skill = form.save(commit=False)
+            skill.owner = profile
+            skill.save()
+            return redirect('account')
+
+    context = {'form': form}
     return render(request, 'users/skill_form.html', context)
