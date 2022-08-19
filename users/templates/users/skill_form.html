@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% extends 'main.html' %}
+{% block content %}
+<h1>Create Skill</h1>
+<form method="POST" action="">
+    {% csrf_token %}
+    <input type="submit" value="submit" />
+</form>
+{% endblock content %}
+</body>
+</html>
