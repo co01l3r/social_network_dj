@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+  <main class="inbox my-xl">
+    <div class="content-box">
+      <h3 class="inbox__title">New Messages(<span>X</span>)</h3>
+      <ul class="messages">
+
+        <li class="message message--unread">
+          <a href="message.html">
+            <span class="message__author">Sender</span>
+            <span class="message__subject">subject</span>
+            <span class="message__date">created</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </main>
+{% endblock content %}
+
+</body>
+</html>
