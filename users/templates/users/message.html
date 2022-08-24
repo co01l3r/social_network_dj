@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+  <main class="messagePage my-xl">
+    <div class="content-box">
+      <div class="message">
+        <a class="backButton" href="inbox.html"><i class="im im-angle-left"></i></a>
+        <h2 class="message__subject">subject</h4>
+          <a href="profile.html" class="message__author">author</a>
+          <p class="message__date">date</p>
+          <div class="message__body">
+              message
+          </div>
+      </div>
+    </div>
+  </main>
+
+{% endblock content %}
+
+</body>
+</html>

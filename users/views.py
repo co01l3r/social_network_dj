@@ -132,3 +132,9 @@ def inbox(request):
 
     context = {'messageRequests': messageRequests, 'unread': unread}
     return render(request, 'users/inbox.html', context)
+
+
+@login_required(login_url='login')
+def message(request, pk):
+    context = {}
+    return render(request, 'users/message.html', context)
