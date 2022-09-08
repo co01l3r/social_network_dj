@@ -38,5 +38,8 @@ def deleteUser(sender, instance, **kwargs):
     """
     when profile is deleted, delete the user as well
     """
-    user = instance.user
-    user.delete()
+    try:
+        user = instance.user
+        user.delete()
+    except:
+        pass
