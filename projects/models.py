@@ -37,6 +37,14 @@ class Project(models.Model):
         self.vote_ratio = ratio
         self.save()
 
+    @property
+    def imageUrl(self):
+        try:
+            url = self.featured_image.url
+        except:
+            url = ''
+        return url
+
 
 class Review(models.Model):
     VOTE_TYPE = (
