@@ -12,6 +12,11 @@ from project folder:
 (<env_name>) $ python3 manage.py runserver
 ```
 
+#### to use default sqlite3(or different) db, swap those two, or change credentials accordingly:
+
+![photo_2022-09-20_19-41-09](https://user-images.githubusercontent.com/25802489/191327467-4aac9bf3-c372-4939-9ecb-3fb3d117121d.jpg)
+
+
 ### Registration and Login
 
 ![ezgif com-gif-maker(7)](https://user-images.githubusercontent.com/25802489/191311876-a4e8c9e0-d78a-4cfb-bd8f-cef7d76772ec.gif)![ezgif com-gif-maker(8)](https://user-images.githubusercontent.com/25802489/191311889-d72646a2-0cf8-4418-9046-f606efbf40f3.gif)
