@@ -12,7 +12,7 @@ from project folder:
 (<env_name>) $ python3 manage.py runserver
 ```
 
-#### to use default sqlite3(or different) db, swap those two, or change credentials accordingly:
+#### to use default sqlite3(or different) db, swap those two, or change credentials accordingly (social_network/settings.py):
 
 ![photo_2022-09-20_19-41-09](https://user-images.githubusercontent.com/25802489/191327467-4aac9bf3-c372-4939-9ecb-3fb3d117121d.jpg)
 
