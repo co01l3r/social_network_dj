@@ -30,3 +30,9 @@ testing Django on real project
 
 ![ezgif com-gif-maker(17)](https://user-images.githubusercontent.com/25802489/191315750-27a1a0f8-3d4f-4c5d-bf46-3bc3bc5e167b.gif)![ezgif com-gif-maker(18)](https://user-images.githubusercontent.com/25802489/191315761-4db0cf24-3963-486d-ba01-b6fd2052ad68.gif)
 
+
+### Simple api
+
+![photo_2022-09-20_18-45-33](https://user-images.githubusercontent.com/25802489/191316846-9b6ff0a0-819b-4e12-97d7-acbb1122a022.jpg)
+
+
