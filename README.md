@@ -5,8 +5,11 @@ testing Django on real project
 ```python
 $ virtualenv <env_name>
 $ source <env_name>/bin/activate
-(<env_name>)$ pip install -r path/to/requirements.txt
-$ python3 manage.py runserver
+(<env_name>) $ pip install -r path/to/requirements.txt
+
+from project folder:
+
+(<env_name>) $ python3 manage.py runserver
 ```
 
 ### Registration and Login
