@@ -16,6 +16,12 @@ from project folder:
 
 ![photo_2022-09-20_19-41-09](https://user-images.githubusercontent.com/25802489/191327467-4aac9bf3-c372-4939-9ecb-3fb3d117121d.jpg)
 
+```python
+from project folder following with:
+(<env_name>) $ python3 manage.py makemigrations
+(<env_name>) $ python3 manage.py migrate
+```
+
 
 ### Registration and Login
 
