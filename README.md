@@ -18,6 +18,7 @@ from project folder:
 
 ```python
 from project folder following with:
+
 (<env_name>) $ python3 manage.py makemigrations
 (<env_name>) $ python3 manage.py migrate
 ```
