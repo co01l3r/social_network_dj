@@ -1,4 +1,6 @@
 # social_network
+![GitHub last commit](https://img.shields.io/github/last-commit/co01l3r/social_network_dj)
+
 testing Django on real project
 
 #### how to use:
@@ -58,5 +60,9 @@ from project folder following with:
 ![photo_2022-09-21_19-44-48](https://user-images.githubusercontent.com/25802489/191574793-80a6c724-b722-452a-8811-f9b21fb4fe8d.jpg)
 
 ![photo_2022-09-20_18-45-33](https://user-images.githubusercontent.com/25802489/191316846-9b6ff0a0-819b-4e12-97d7-acbb1122a022.jpg)
+
+![GitHub repo size](https://img.shields.io/github/repo-size/co01l3r/social_network_dj)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/co01l3r/social_network_dj)
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/co01l3r/social_network_dj)
 
 
